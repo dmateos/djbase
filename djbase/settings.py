@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'b-q)7wa#)2x=!qk5dc&yjw7h@6$gy@k7lzz!0a3m%)##du0h0n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", True)
 
-ALLOWED_HOSTS = ['lilith.mateos.lan']
+ALLOWED_HOSTS = ['lilith.mateos.lan', os.environ.get("ALLOWED_HOSTS") ]
 
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
@@ -79,12 +79,23 @@ WSGI_APPLICATION = 'djbase.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if not os.environ.get("DB_HOST", False):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            "NAME" : os.environ.get("DB_NAME", ""),
+            "USER" : os.environ.get("DB_USER", ""),
+            "PASSWORD" : os.environ.get("DB_PASSWORD", ""),
+            "HOST" : os.environ.get("DB_HOST", "localhost"),
+        }
+    }
 
 
 # Password validation
