@@ -1,5 +1,7 @@
-## Django skeleton application 
-### Sensible defaults, 
+## Django skeleton application
+Common stuff i normall need to setup at the start of a project. 
+Saves about an hour of fucking around. 
+Will add more stuff overtime as i extract it from projects i do. 
 
 ### Bootstrap 4 setup
 Some basic templates
