@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['lilith.mateos.lan']
 
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = '/'
 
 # Application definition
 
