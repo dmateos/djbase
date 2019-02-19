@@ -20,5 +20,6 @@
 ### Lib dir 
 - Use for domain logic 
 
-### Style guide
+### Misc
 - Example views/model 
+- AppConfiguration model for storing global config. 
