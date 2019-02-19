@@ -2,6 +2,19 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+class AppConfiguration(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+    some_config_option = models.TextField(default="")
+
+    class Meta:
+        get_latest_by = "created"
+
+    @staticmethod
+    def get(name):
+        config = AppConfiguration.objects.latest()
+        return getattr(config, name)
+
+
 class Account(models.Model):
     """
     This is an account that will be linked to a django user
