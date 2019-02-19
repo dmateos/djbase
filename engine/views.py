@@ -38,3 +38,10 @@ class UserRegister(View):
             user.save()
             login(request, user, backend='django.contrib.auth.backends.ModelBackend')
             return redirect("/home")
+
+
+#class DynamicEntryUpdate(LoginRequiredMixin, UpdateView):
+#	model = DynamicEntry
+#	fields = [ "name", "domain", "record_type", "record_value" ]
+#	template_name_suffix = "_update_form"
+#	success_url = "/home"
