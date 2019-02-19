@@ -3,6 +3,10 @@
 - Saves about an hour of fucking around. 
 - Will add more stuff overtime as i extract it from projects i do. 
 
+### Serverless/Elastic Beanstalk ready 
+- settings.py can use sqlite/mysql based on env var switch. 
+- os.environ.get() used for db/auth etc for slipping in serverless/eb settings.
+
 ### Bootstrap 4 setup
 - Some basic templates
 - Lib installed/style setup
