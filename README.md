@@ -6,7 +6,7 @@
 ### Serverless/Elastic Beanstalk ready 
 - settings.py can use sqlite/mysql based on env var switch. 
 - os.environ.get() used for db/auth etc for slipping in serverless/eb settings.
-- zappa_config for lambda deployments. 
+- Zappa settings for lambda deployments. 
 - Boiled down requirements.txt for venvs. 
 
 ### Bootstrap 4 setup
