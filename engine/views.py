@@ -6,6 +6,7 @@ from django.views.generic.edit import FormView, UpdateView, CreateView
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import authenticate, login
+from django.core.exceptions import PermissionDenied
 from .forms import UserForm
 import datetime
 
@@ -46,8 +47,8 @@ class UserRegister(View):
 #	template_name_suffix = "_update_form"
 #	success_url = "/home"
 
-#    def get_object(self, *args, **kwargs):
-#        obj = super().get_object(*args, **kwargs)
-#        if obj.account.user != self.request.user:
-#            raise PermissionDenied()
-#        return obj
+#   def get_object(self, *args, **kwargs):
+#       obj = super().get_object(*args, **kwargs)
+#       if obj.account.user != self.request.user:
+#           raise PermissionDenied()
+#       return obj
