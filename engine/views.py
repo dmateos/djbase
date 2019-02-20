@@ -45,3 +45,9 @@ class UserRegister(View):
 #	fields = [ "name", "domain", "record_type", "record_value" ]
 #	template_name_suffix = "_update_form"
 #	success_url = "/home"
+
+#    def get_object(self, *args, **kwargs):
+#        obj = super().get_object(*args, **kwargs)
+#        if obj.account.user != self.request.user:
+#            raise PermissionDenied()
+#        return obj
