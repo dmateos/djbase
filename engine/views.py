@@ -38,6 +38,7 @@ class UserRegister(View):
             user.save()
             login(request, user, backend="django.contrib.auth.backends.ModelBackend")
             return redirect("/home")
+        return redirect("accounts/logins")
 
 
 # class DynamicEntryUpdate(LoginRequiredMixin, UpdateView):
