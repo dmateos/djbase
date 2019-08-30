@@ -10,25 +10,24 @@ from django.core.exceptions import PermissionDenied
 from .forms import UserForm
 import datetime
 
+
 def index(request):
-    context = {
-    }
+    context = {}
 
     return render(request, "engine/index.html", context)
+
 
 @login_required
 def home(request):
 
-    context = {
-    }
+    context = {}
     return render(request, "engine/home.html", context)
+
 
 class UserRegister(View):
     def get(self, request, *args, **kwargs):
         form = UserForm()
-        context = {
-            "form" : form,
-        }
+        context = {"form": form}
         return render(request, "engine/user_register.html", context)
 
     def post(self, request, *args, **kwargs):
@@ -37,15 +36,15 @@ class UserRegister(View):
             user = form.save()
             user.set_password(user.password)
             user.save()
-            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+            login(request, user, backend="django.contrib.auth.backends.ModelBackend")
             return redirect("/home")
 
 
-#class DynamicEntryUpdate(LoginRequiredMixin, UpdateView):
-#	model = DynamicEntry
-#	fields = [ "name", "domain", "record_type", "record_value" ]
-#	template_name_suffix = "_update_form"
-#	success_url = "/home"
+# class DynamicEntryUpdate(LoginRequiredMixin, UpdateView):
+# 	model = DynamicEntry
+# 	fields = [ "name", "domain", "record_type", "record_value" ]
+# 	template_name_suffix = "_update_form"
+# 	success_url = "/home"
 
 #   def get_object(self, *args, **kwargs):
 #       obj = super().get_object(*args, **kwargs)
