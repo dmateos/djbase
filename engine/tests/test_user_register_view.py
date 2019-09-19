@@ -34,5 +34,4 @@ class UserRegisterViewTestCase(TestCase):
             {"username": "test", "password": "test", "email": "test@test.com"},
             follow=True,
         )
-
         assert Account.objects.filter(name="test").first().user.username == "test"

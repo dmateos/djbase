@@ -13,13 +13,11 @@ import datetime
 
 def index(request):
     context = {}
-
     return render(request, "engine/index.html", context)
 
 
 @login_required
 def home(request):
-
     context = {}
     return render(request, "engine/home.html", context)
 
@@ -38,7 +36,7 @@ class UserRegister(View):
             user.save()
             login(request, user, backend="django.contrib.auth.backends.ModelBackend")
             return redirect("/home")
-        return redirect("accounts/logins")
+        return redirect("accounts/login")
 
 
 # class DynamicEntryUpdate(LoginRequiredMixin, UpdateView):
