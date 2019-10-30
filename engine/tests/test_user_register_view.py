@@ -1,17 +1,11 @@
 import pytest
-from django.test import Client
 from django.urls import reverse
-
 from engine.models import Account
 
 
-def test_client():
-    return Client()
-
-
 @pytest.mark.django_db
-def test_user_register_page_loads():
-    response = test_client().get(reverse("user_register"))
+def test_user_register_page_loads(client):
+    response = client.get(reverse("user_register"))
 
     assert response.status_code == 200
     assert "Username" in str(response.content)
@@ -20,8 +14,8 @@ def test_user_register_page_loads():
 
 
 @pytest.mark.django_db
-def test_user_can_register():
-    response = test_client().post(
+def test_user_can_register(client):
+    response = client.post(
         reverse("user_register"),
         {"username": "test", "password": "test", "email": "test@test.com"},
         follow=True,
@@ -33,8 +27,8 @@ def test_user_can_register():
 
 
 @pytest.mark.django_db
-def test_associated_account_is_created():
-    test_client().post(
+def test_associated_account_is_created(client):
+    client.post(
         reverse("user_register"),
         {"username": "test", "password": "test", "email": "test@test.com"},
         follow=True,
