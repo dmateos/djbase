@@ -1,14 +1,21 @@
 {% extends 'engine/base.html' %}
 
 {% load bootstrap4 %}
+{% load widget_tweaks %}
 
 {% block content %}
   <h2>Login</h2>
   <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
+    {% for field in form.visible_fields %}
+      <div class="form-group">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field|add_class:"form-control" }}
+      </div>
+    {% endfor %}
+
+    <div class="form-group">
+      <input type="submit" class="btn btn-success" value="Register">
+    <div>
   </form>
-  <br>
-  <p><strong>-- OR --</strong></p>
-  {% endblock %}
+{% endblock %}
