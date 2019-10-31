@@ -11,7 +11,7 @@ cfn-flip==1.1.0.post1
 chardet==3.0.4
 Click==7.0
 defusedxml==0.5.0
-Django==2.1.7
+Django==2.1.11
 django-bootstrap4==0.0.7
 djangorestframework==3.9.1
 docutils==0.14
@@ -42,7 +42,7 @@ python-dateutil==2.6.1
 python-slugify==1.2.4
 python3-openid==3.1.0
 pytz==2018.9
-PyYAML==3.13
+PyYAML==5.1
 requests==2.21.0
 requests-oauthlib==1.2.0
 s3transfer==0.2.0
@@ -51,10 +51,10 @@ toml==0.10.0
 tqdm==4.19.1
 troposphere==2.4.4
 Unidecode==1.0.23
-urllib3==1.24.1
+urllib3==1.24.2
 virtualenv==16.7.5
 wcwidth==0.1.7
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 wsgi-request-logger==0.4.6
 zappa==0.47.1
 zipp==0.6.0
