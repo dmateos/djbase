@@ -26,3 +26,4 @@
 ### Misc
 - Example views/model 
 - AppConfiguration model for storing global config. 
+- Pytest setup with example structure/tests. 
