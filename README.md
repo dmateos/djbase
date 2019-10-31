@@ -1,3 +1,5 @@
+# Django Base - Sensible defaults for a sensible person.
+
 ## Django skeleton application
 - Common stuff i normall need to setup at the start of a project. 
 - Saves about an hour of fucking around. 
@@ -11,8 +13,9 @@
 
 ### Bootstrap 4 setup
 - Some basic templates
-- Navbar login/logout/logic 
+- Navbar login/logout/logic
 - Lib installed/style setup
+- Form examples using widget_tweaks
 
 ### Some user management 
 - Login
