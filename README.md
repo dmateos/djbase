@@ -16,7 +16,7 @@
 
 ### Some user management 
 - Login
-- Register 
+- Register
 - Linked account model with signal hookup
 - Index/Home/Dashboard logged in/out logic
 
@@ -28,7 +28,8 @@
 - Flake8
 
 ### Misc
-- Example views/model 
+- Example views/model
 - AppConfiguration model for storing global config
 - Pytest setup with example structure/tests
+- Coverage.py integration with pytest setup
 
