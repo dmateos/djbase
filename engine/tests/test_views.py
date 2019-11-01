@@ -3,6 +3,14 @@ from django.urls import reverse
 from engine.models import Account
 
 
+# Index
+def test_index_loads(client):
+    response = client.get("/")
+
+    assert response.status_code == 200
+
+
+# User Login/Register
 @pytest.mark.django_db
 def test_user_register_page_loads(client):
     response = client.get(reverse("user_register"))
@@ -35,3 +43,15 @@ def test_associated_account_is_created(client):
     )
 
     assert Account.objects.filter(name="test").first().user.username == "test"
+
+
+@pytest.mark.django_db
+def test_invalid_form_redirect_to_login(client):
+    response = client.post(
+        reverse("user_register"),
+        {"username": "test", "password": "", "email": "test@test.com"},
+        follow=True,
+    )
+
+    assert "Username" in str(response.content)
+    assert "Password" in str(response.content)
